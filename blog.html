@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOSE Blog - ADHD App Comparisons | Crisis Intervention vs Task Management</title>
+    <meta name="description" content="Compare DOSE with leading ADHD apps like Inflow, Shimmer, and Numo. Find the right ADHD crisis intervention and management tool for your needs.">
+    <meta name="keywords" content="ADHD app, DOSE, Inflow, Shimmer, Numo, RSD, rejection sensitivity, ADHD crisis, emotional regulation">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background: #f7fafc;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #764ba2;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .blog-list {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .blog-card h2 {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-meta {
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-card p {
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .read-more:hover {
+            transform: scale(1.05);
+        }
+
+        article {
+            background: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        article h1 {
+            color: #2d3748;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        article h2 {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        article h3 {
+            color: #4a5568;
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        article p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        article ul, article ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        article li {
+            margin-bottom: 0.75rem;
+            font-size: 1.05rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .comparison-table tr:hover {
+            background: #f7fafc;
+        }
+
+        .highlight-box {
+            background: #edf2f7;
+            border-left: 4px solid #667eea;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box h3 {
+            margin-top: 0;
+            color: #667eea;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: #667eea;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            article {
+                padding: 1.5rem;
+            }
+
+            article h1 {
+                font-size: 1.8rem;
+            }
+
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+
+            .comparison-table th, .comparison-table td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DOSE Blog</h1>
+        <p>Insights on ADHD, Crisis Management, and Mental Health Technology</p>
+    </header>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/about.html">About</a>
+        <a href="mailto:steev@damnhealthydose.com">Contact</a>
+    </nav>
+
+    <div class="container">
+        <!-- BLOG LIST VIEW -->
+        <div id="blog-list" class="blog-list">
+            <div class="blog-card">
+                <h2>DOSE vs Inflow: Which ADHD App is Right for You?</h2>
+                <p class="blog-meta">Published: November 14, 2025 | 8 min read</p>
+                <p>Choosing between ADHD apps? Learn how DOSE's crisis intervention approach differs from Inflow's coaching model, and discover which solution fits your needs best.</p>
+                <a class="read-more" onclick="showArticle('inflow')">Read Full Comparison →</a>
+            </div>
+
+            <div class="blog-card">
+                <h2>DOSE vs Shimmer: Which ADHD App is Right for You?</h2>
+                <p class="blog-meta">Published: November 14, 2025 | 7 min read</p>
+                <p>Shimmer offers ADHD coaching, but what about crisis moments? Compare Shimmer's professional coaching approach with DOSE's real-time intervention tools.</p>
+                <a class="read-more" onclick="showArticle('shimmer')">Read Full Comparison →</a>
+            </div>
+
+            <div class="blog-card">
+                <h2>DOSE vs Numo: Which ADHD App is Right for You?</h2>
+                <p class="blog-meta">Published: November 14, 2025 | 7 min read</p>
+                <p>Numo gamifies ADHD task management, while DOSE tackles emotional crises. Explore the key differences and find out which app complements your ADHD management strategy.</p>
+                <a class="read-more" onclick="showArticle('numo')">Read Full Comparison →</a>
+            </div>
+        </div>
+
+        <!-- ARTICLE 1: DOSE VS INFLOW -->
+        <article id="article-inflow" style="display: none;">
+            <a class="back-link" onclick="showBlogList()">← Back to Blog</a>
+            
+            <h1>DOSE vs Inflow: Which ADHD App is Right for You?</h1>
+            <p class="blog-meta">Published: November 14, 2025 | 8 min read | By Steev Hodgson</p>
+
+            <p>If you're exploring ADHD apps, you've probably come across both DOSE and Inflow. While both aim to support people with ADHD, they take fundamentally different approaches. Understanding these differences will help you choose the right tool for your specific needs.</p>
+
+            <h2>The Key Difference: Crisis Intervention vs Daily Coaching</h2>
+            
+            <p>The most important distinction between DOSE and Inflow comes down to when and how you need support:</p>
+
+            <p><strong>Inflow</strong> is designed for daily ADHD management through structured coaching, educational content, and habit building. It's excellent for learning about your ADHD and developing long-term strategies.</p>
+
+            <p><strong>DOSE</strong> is built for crisis intervention. When rejection sensitivity hits, when emotional dysregulation overwhelms you, or when executive function completely shuts down, DOSE provides immediate, structured tools to help you navigate those acute moments.</p>
+
+            <h2>Feature Comparison</h2>
+
+            <table class="comparison-table">
+                <tr>
+                    <th>Feature</th>
+                    <th>DOSE</th>
+                    <th>Inflow</th>
+                </tr>
+                <tr>
+                    <td><strong>Primary Focus</strong></td>
+                    <td>Crisis intervention & emotional regulation</td>
+                    <td>Daily coaching & ADHD education</td>
+                </tr>
+                <tr>
+                    <td><strong>RSD Support</strong></td>
+                    <td>Dedicated RSD Meter tool (world's first)</td>
+                    <td>Educational content about RSD</td>
+                </tr>
+                <tr>
+                    <td><strong>Crisis Tools</strong></td>
+                    <td>4 evidence-based interventions</td>
+                    <td>Coaching exercises & mindfulness</td>
+                </tr>
+                <tr>
+                    <td><strong>AI Companion</strong></td>
+                    <td>Barkley guides through crisis tools</td>
+                    <td>Not available</td>
+                </tr>
+                <tr>
+                    <td><strong>Response Time</strong></td>
+                    <td>Immediate (1-15 minutes per tool)</td>
+                    <td>Ongoing daily practice</td>
+                </tr>
+                <tr>
+                    <td><strong>Pricing</strong></td>
+                    <td>Free trial at GetDOSE.app</td>
+                    <td>Subscription ($50+/month)</td>
+                </tr>
+            </table>
+
+            <h2>When to Choose DOSE</h2>
+
+            <p>DOSE is the right choice if you:</p>
+
+            <ul>
+                <li><strong>Experience intense rejection sensitivity</strong> - The RSD Meter is specifically designed for these crisis moments</li>
+                <li><strong>Need immediate support during emotional overwhelm</strong> - WAVE tool provides 2-3 minute emotional reset</li>
+                <li><strong>Struggle with cognitive spirals</strong> - SPARK breaks down thought patterns in real-time</li>
+                <li><strong>Lose brilliant ideas constantly</strong> - POPCORN captures and organizes creative thoughts</li>
+                <li><strong>Want tools that work when executive function fails</strong> - Designed for ADHD brains in crisis</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>Real User Story</h3>
+                <p>"I use Inflow for my daily ADHD learning and it's great. But when I get triggered by a perceived rejection at work, I need DOSE. Inflow teaches me about RSD, but DOSE helps me THROUGH an RSD episode. I use both." - Sarah M., DOSE Beta User</p>
+            </div>
+
+            <h2>When to Choose Inflow</h2>
+
+            <p>Inflow is the right choice if you:</p>
+
+            <ul>
+                <li><strong>Want structured ADHD education</strong> - Comprehensive modules about understanding ADHD</li>
+                <li><strong>Need daily coaching guidance</strong> - Regular check-ins and skill-building exercises</li>
+                <li><strong>Prefer a holistic ADHD management approach</strong> - Covers work, relationships, time management</li>
+                <li><strong>Value community connection</strong> - Access to coaching and peer support</li>
+                <li><strong>Are newly diagnosed</strong> - Excellent for learning about ADHD fundamentals</li>
+            </ul>
+
+            <h2>Can You Use Both?</h2>
+
+            <p>Absolutely. Many users find that Inflow and DOSE complement each other perfectly. Use Inflow for ongoing education and daily habit building. Use DOSE when crisis hits.</p>
+
+            <p>Think of it this way: Inflow is your ADHD coach helping you build better systems. DOSE is your crisis hotline when those systems break down.</p>
+
+            <div class="cta-box">
+                <h3>Try DOSE Free Today</h3>
+                <p>Experience the world's first ADHD crisis intervention tools. No credit card required.</p>
+                <a href="https://getdose.app" class="cta-button">Start Your Free Trial →</a>
+            </div>
+
+            <h2>About the Author</h2>
+            <p>Steev Hodgson is the founder of DOSE and an ICF-credentialed ADHD coach who has delivered 1,300+ coaching sessions. Diagnosed with ADHD at 50 after 15 years in enterprise tech sales, Steev built DOSE to address the critical gap he saw in ADHD crisis support.</p>
+        </article>
+
+        <!-- ARTICLE 2: DOSE VS SHIMMER -->
+        <article id="article-shimmer" style="display: none;">
+            <a class="back-link" onclick="showBlogList()">← Back to Blog</a>
+            
+            <h1>DOSE vs Shimmer: Which ADHD App is Right for You?</h1>
+            <p class="blog-meta">Published: November 14, 2025 | 7 min read | By Steev Hodgson</p>
+
+            <p>Both DOSE and Shimmer aim to support adults with ADHD, but they approach the challenge from completely different angles. Shimmer connects you with professional ADHD coaches, while DOSE provides immediate digital crisis tools.</p>
+
+            <h2>The Core Difference: Human Coaching vs Digital Tools</h2>
+
+            <p><strong>Shimmer</strong> pairs you with a dedicated ADHD coach for one-on-one video sessions, text support, and personalized strategies.</p>
+
+            <p><strong>DOSE</strong> provides four evidence-based digital tools plus AI companion Barkley that you can use anytime, anywhere, without scheduling or waiting.</p>
+
+            <h2>Feature Comparison</h2>
+
+            <table class="comparison-table">
+                <tr>
+                    <th>Feature</th>
+                    <th>DOSE</th>
+                    <th>Shimmer</th>
+                </tr>
+                <tr>
+                    <td><strong>Support Type</strong></td>
+                    <td>Digital tools + AI companion</td>
+                    <td>Live human ADHD coaches</td>
+                </tr>
+                <tr>
+                    <td><strong>Availability</strong></td>
+                    <td>24/7 instant access</td>
+                    <td>Scheduled sessions + async messaging</td>
+                </tr>
+                <tr>
+                    <td><strong>Crisis Response</strong></td>
+                    <td>Immediate (1-15 min tools)</td>
+                    <td>Message coach and wait for response</td>
+                </tr>
+                <tr>
+                    <td><strong>RSD Support</strong></td>
+                    <td>Dedicated RSD Meter tool</td>
+                    <td>Coach guidance on RSD management</td>
+                </tr>
+                <tr>
+                    <td><strong>Cost</strong></td>
+                    <td>Free trial at GetDOSE.app</td>
+                    <td>$150-300+/month for coaching</td>
+                </tr>
+                <tr>
+                    <td><strong>Privacy</strong></td>
+                    <td>Completely private</td>
+                    <td>Share personal details with coach</td>
+                </tr>
+            </table>
+
+            <h2>When to Choose DOSE</h2>
+
+            <ul>
+                <li><strong>Need immediate support</strong> - Can't wait for scheduled sessions when RSD hits at 2am</li>
+                <li><strong>Prefer privacy</strong> - Don't want to share personal details with another human</li>
+                <li><strong>Want affordable tools</strong> - Professional coaching is expensive</li>
+                <li><strong>Value structured frameworks</strong> - SPARK's 5-step CBT, WAVE's 3-step reset</li>
+                <li><strong>Experience frequent crises</strong> - Unlimited use without session fees</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>When 24/7 Access Matters</h3>
+                <p>"I had a massive RSD trigger at 11pm after reading a work email. My Shimmer coach wasn't available until Thursday. DOSE's RSD Meter walked me through it right then." - Mike T.</p>
+            </div>
+
+            <h2>When to Choose Shimmer</h2>
+
+            <ul>
+                <li><strong>Want human connection</strong> - Prefer talking with a real person</li>
+                <li><strong>Need accountability</strong> - Scheduled sessions keep you on track</li>
+                <li><strong>Have complex situations</strong> - Workplace accommodations, relationships</li>
+                <li><strong>Can afford coaching</strong> - Budget allows $150-300+ monthly</li>
+            </ul>
+
+            <h2>The Hybrid Approach</h2>
+
+            <p>Many users successfully combine both. Use Shimmer for strategic weekly sessions. Use DOSE for immediate crisis intervention between coaching sessions.</p>
+
+            <div class="cta-box">
+                <h3>Try DOSE Free</h3>
+                <p>No waiting, no scheduling. Just immediate tools when you need them most.</p>
+                <a href="https://getdose.app" class="cta-button">Start Your Free Trial →</a>
+            </div>
+
+            <h2>About the Author</h2>
+            <p>Steev Hodgson is both an ICF-credentialed ADHD coach (1,300+ sessions) and the founder of DOSE. He understands the value of both human coaching and digital tools. He built DOSE to fill the gap: clients needed support between sessions, especially during crisis moments.</p>
+        </article>
+
+        <!-- ARTICLE 3: DOSE VS NUMO -->
+        <article id="article-numo" style="display: none;">
+            <a class="back-link" onclick="showBlogList()">← Back to Blog</a>
+            
+            <h1>DOSE vs Numo: Which ADHD App is Right for You?</h1>
+            <p class="blog-meta">Published: November 14, 2025 | 7 min read | By Steev Hodgson</p>
+
+            <p>Numo and DOSE both support people with ADHD, but they couldn't be more different. Numo gamifies task management and builds community, while DOSE provides crisis intervention tools for emotional regulation.</p>
+
+            <h2>The Fundamental Difference: Productivity vs Crisis Management</h2>
+
+            <p><strong>Numo</strong> makes ADHD task management fun through gamification, social accountability, and community support. It helps you remember to do things and makes boring stuff engaging.</p>
+
+            <p><strong>DOSE</strong> addresses emotional and cognitive crises: rejection sensitivity, emotional dysregulation, cognitive spirals, and executive dysfunction during crisis moments.</p>
+
+            <h2>Feature Comparison</h2>
+
+            <table class="comparison-table">
+                <tr>
+                    <th>Feature</th>
+                    <th>DOSE</th>
+                    <th>Numo</th>
+                </tr>
+                <tr>
+                    <td><strong>Primary Focus</strong></td>
+                    <td>Emotional crisis intervention</td>
+                    <td>Task management & productivity</td>
+                </tr>
+                <tr>
+                    <td><strong>RSD Support</strong></td>
+                    <td>World's first RSD Meter tool</td>
+                    <td>Community support for feelings</td>
+                </tr>
+                <tr>
+                    <td><strong>Core Tools</strong></td>
+                    <td>SPARK, WAVE, POPCORN, RSD Meter</td>
+                    <td>Task lists, reminders, habit tracking</td>
+                </tr>
+                <tr>
+                    <td><strong>Gamification</strong></td>
+                    <td>Progress tracking & insights</td>
+                    <td>Extensive points, levels, rewards</td>
+                </tr>
+                <tr>
+                    <td><strong>Community</strong></td>
+                    <td>Individual private tool use</td>
+                    <td>Strong social/community features</td>
+                </tr>
+                <tr>
+                    <td><strong>AI Companion</strong></td>
+                    <td>Barkley for crisis guidance</td>
+                    <td>Not available</td>
+                </tr>
+            </table>
+
+            <h2>When to Choose DOSE</h2>
+
+            <ul>
+                <li><strong>Experience intense rejection sensitivity</strong> - RSD episodes that derail your day</li>
+                <li><strong>Struggle with emotional regulation</strong> - Go from 0 to 100 emotionally</li>
+                <li><strong>Get stuck in cognitive spirals</strong> - Can't stop overthinking</li>
+                <li><strong>Need crisis tools, not task tools</strong> - Problem isn't forgetting laundry, it's emotional overwhelm</li>
+                <li><strong>Value privacy in vulnerable moments</strong> - Don't want to share RSD episodes publicly</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>Different Problems, Different Solutions</h3>
+                <p>"Numo helps me remember to take out the trash. DOSE helps me when I spiral for three hours because someone didn't respond to my text. Totally different needs." - Alex R.</p>
+            </div>
+
+            <h2>When to Choose Numo</h2>
+
+            <ul>
+                <li><strong>Need help with executive function tasks</strong> - Remembering, starting, finishing things</li>
+                <li><strong>Thrive on gamification</strong> - Points and rewards motivate you</li>
+                <li><strong>Want community connection</strong> - Find support sharing with other ADHD folks</li>
+                <li><strong>Struggle with task initiation</strong> - Need dopamine hit to start boring tasks</li>
+                <li><strong>Like social accountability</strong> - Sharing progress keeps you motivated</li>
+            </ul>
+
+            <h2>Why DOSE and Numo Complement Each Other</h2>
+
+            <p>DOSE and Numo address completely different aspects of ADHD. They're not competitors, they're complementary tools.</p>
+
+            <p><strong>Use Numo for:</strong> Daily tasks, habit building, getting motivated, community support, executive function</p>
+
+            <p><strong>Use DOSE for:</strong> RSD episodes, emotional overwhelm, cognitive spirals, quick emotional resets, capturing ideas</p>
+
+            <h2>Real-World Scenario</h2>
+
+            <p>Morning: Use Numo for your routine. Mid-morning: Boss sends terse email, you spiral. Use DOSE's RSD Meter. Afternoon: Back on track with Numo task list. Evening: Feeling overwhelmed. Use DOSE's WAVE tool for 3-minute reset. Night: Numo for evening routine.</p>
+
+            <div class="cta-box">
+                <h3>Experience Crisis-Ready ADHD Support</h3>
+                <p>Try DOSE's four evidence-based tools, including the world's first RSD Meter.</p>
+                <a href="https://getdose.app" class="cta-button">Start Your Free Trial →</a>
+            </div>
+
+            <h2>About the Author</h2>
+            <p>Steev Hodgson is the founder of DOSE and an ICF-credentialed ADHD coach with 1,300+ sessions delivered. After being diagnosed with ADHD at 50, he noticed that while task management apps helped with productivity, nothing existed for the emotional crises ADHD creates daily. That's why he built DOSE.</p>
+        </article>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 DOSE - The OS for ADHD. All rights reserved.</p>
+        <p>Contact: <a href="mailto:steev@damnhealthydose.com">steev@damnhealthydose.com</a></p>
+    </footer>
+
+    <script>
+        function showArticle(app) {
+            document.getElementById('blog-list').style.display = 'none';
+            document.getElementById('article-inflow').style.display = 'none';
+            document.getElementById('article-shimmer').style.display = 'none';
+            document.getElementById('article-numo').style.display = 'none';
+            document.getElementById('article-' + app).style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        function showBlogList() {
+            document.getElementById('article-inflow').style.display = 'none';
+            document.getElementById('article-shimmer').style.display = 'none';
+            document.getElementById('article-numo').style.display = 'none';
+            document.getElementById('blog-list').style.display = 'grid';
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
