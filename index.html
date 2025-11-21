@@ -462,8 +462,102 @@
             color: #86efac;
         }
 
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #e5e5e5;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            flex-direction: column;
+            padding: 2rem;
+            gap: 1.5rem;
+            z-index: 99;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            animation: slideDown 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mobile-menu a {
+            color: #e5e5e5;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: #a855f7;
+        }
+
+        .mobile-menu a.academy {
+            color: #06b6d4;
+        }
+
+        .mobile-menu a.academy:hover {
+            color: #22d3ee;
+        }
+
+        .mobile-menu a.coaching {
+            color: #4ade80;
+        }
+
+        .mobile-menu a.coaching:hover {
+            color: #86efac;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
             .nav-links {
                 display: none;
             }
@@ -617,8 +711,24 @@
     <a href="https://academy.getdose.app" class="academy" target="_blank">Academy</a>
     <a href="https://www.damnhealthydose.com" class="coaching" target="_blank">Coaching</a>
         </ul>
+        <button class="hamburger" id="hamburgerBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </div>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="#pricing">Pricing</a>
+    <a href="investors.html">Investors</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://academy.getdose.app" class="academy" target="_blank">Academy</a>
+    <a href="https://www.damnhealthydose.com" class="coaching" target="_blank">Coaching</a>
+</div>
 <!-- Replace your hero section with this updated version -->
 <section class="hero" id="tools">
     <div class="hero-content"> 
@@ -1374,6 +1484,24 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 
     <script>
+        // Hamburger Menu Toggle
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
         // Add smooth scrolling and interactive effects
         document.querySelectorAll('.tool-card').forEach(card => {
             card.addEventListener('mouseenter', () => {
