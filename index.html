@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -90,10 +90,14 @@
     .hero h2 {
         font-size: 1.2rem !important;
     }
-    
-    nav {
-        flex-direction: column;
+
+    .nav-links {
         gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
     }
 }
         /* Hero Section */
@@ -426,16 +430,34 @@
             display: flex;
             gap: 2rem;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
             color: #e5e5e5;
             text-decoration: none;
             transition: color 0.3s ease;
+            font-size: 0.95rem;
         }
 
         .nav-links a:hover {
             color: #a855f7;
+        }
+
+        .nav-links a.academy {
+            color: #06b6d4;
+        }
+
+        .nav-links a.academy:hover {
+            color: #22d3ee;
+        }
+
+        .nav-links a.coaching {
+            color: #4ade80;
+        }
+
+        .nav-links a.coaching:hover {
+            color: #86efac;
         }
 
         /* Responsive */
@@ -586,10 +608,12 @@
         <ul class="nav-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="blog.html">Blog</a>  <!-- ADD THIS LINE -->
+    <a href="blog.html">Blog</a>
     <a href="pricing.html">Pricing</a>
     <a href="investors.html">Investors</a>
     <a href="contact.html">Contact</a>
+    <a href="https://academy.getdose.app" class="academy" target="_blank">Academy</a>
+    <a href="https://www.damnhealthydose.com" class="coaching" target="_blank">Coaching</a>
         </ul>
     </div>
 </nav>
@@ -1024,7 +1048,7 @@
   padding: 32px;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  min-width: 0; /* Prevents flex/grid items from overflowing */
+  min-width: 0;
   width: 100%;
 }
 
@@ -1189,7 +1213,6 @@
   background: #475569;
 }
 
-/* Promo Section */
 .promo-section {
   text-align: center;
   padding: 40px 0;
@@ -1229,7 +1252,6 @@
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
-/* Responsive Design */
 @media (max-width: 1200px) {
   .pricing-grid {
     gap: 20px;
@@ -1269,7 +1291,6 @@
   }
 }
 
-/* ADHD-Friendly Enhancements */
 @media (prefers-reduced-motion: reduce) {
   .pricing-card {
     transition: none;
@@ -1284,7 +1305,6 @@
   }
 }
 
-/* High contrast mode support */
 @media (prefers-contrast: high) {
   .pricing-card {
     border: 2px solid white;
