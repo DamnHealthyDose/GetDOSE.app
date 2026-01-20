@@ -48,6 +48,35 @@
             padding: 2rem;
         }
         
+        .gfy-featured-logo {
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%) rotate(-5deg);
+            width: 280px;
+            opacity: 0.15;
+            animation: float 6s ease-in-out infinite;
+            z-index: 1;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(-50%) rotate(-5deg); }
+            50% { transform: translateY(-55%) rotate(-3deg); }
+        }
+        
+        @media (max-width: 1024px) {
+            .gfy-featured-logo {
+                width: 200px;
+                right: 5%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .gfy-featured-logo {
+                display: none;
+            }
+        }
+        
         .hero::before {
             content: '';
             position: absolute;
@@ -577,6 +606,7 @@
 <body>
     <!-- Hero Section -->
     <section class="hero">
+        <img src="gofundyourself.jpg" alt="Go Fund Yourself" class="gfy-featured-logo">
         <div class="hero-content">
             <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
                 <img src="gofundyourself.jpg" alt="Go Fund Yourself" style="height: 50px; border-radius: 8px;">
