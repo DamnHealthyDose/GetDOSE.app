@@ -80,6 +80,10 @@
             max-width: 800px;
             margin: 0 auto;
         }
+
+        .story-content p {
+            margin-bottom: 20px;
+        }
         
         .achievements {
             display: grid;
@@ -119,27 +123,113 @@
         .media-title {
             color: #06b6d4;
             font-size: 1.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             text-align: center;
         }
         
-        .media-list {
+        .media-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
-        
-        .media-item {
+
+        .media-card {
             background: rgba(255, 255, 255, 0.05);
-            padding: 15px;
-            border-radius: 8px;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .media-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+        }
+
+        .media-thumbnail {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .media-info {
+            padding: 20px;
+        }
+
+        .media-info h4 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .media-host {
+            color: #a855f7;
             font-size: 0.9rem;
-            color: #e5e5e5;
+            margin-bottom: 5px;
+        }
+
+        .media-date {
+            color: #999;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+
+        .media-link {
+            color: #06b6d4;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .media-link:hover {
+            color: #a855f7;
+        }
+
+        .blog-cta {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .blog-cta a {
+            color: #06b6d4;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .blog-cta a:hover {
+            color: #a855f7;
+        }
+
+        .video-embed {
+            width: 100%;
+            aspect-ratio: 16/9;
+            margin: 40px 0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .video-embed iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
         
         .cta-section {
             text-align: center;
             margin-top: 60px;
+        }
+
+        .cta-section img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 1.5rem;
         }
         
         .cta-button {
@@ -160,6 +250,52 @@
             box-shadow: 0 20px 40px rgba(168, 85, 247, 0.3);
         }
         
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #a855f7, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #e5e5e5;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #a855f7;
+        }
+
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2rem;
@@ -170,95 +306,41 @@
             .story-section {
                 padding: 25px;
             }
+            .nav-links {
+                display: none;
+            }
+            .cta-button {
+                margin: 10px 5px;
+                font-size: 0.9rem;
+                padding: 12px 20px;
+            }
+            .media-grid {
+                grid-template-columns: 1fr;
+            }
         }
-        /* Navigation */
-.nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    background: rgba(10, 10, 10, 0.9);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 1rem 2rem;
-}
-
-.nav-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, #a855f7, #06b6d4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-}
-
-.nav-links a {
-    color: #e5e5e5;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #a855f7;
-}
-
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-}
     </style>
 </head>
 <body>
     <!-- Navigation -->
-<nav class="nav">
-
-    <div class="nav-content">
-
-        <div class="logo"><a href="/" style="text-decoration: none; color: inherit;">DOSE</a></div>
-
-        <ul class="nav-links">
-
-            <li><a href="/#home">Home</a></li>
-
-            <li><a href="/about.html">About</a></li>
-
-            <li><a href="/#pricing">Pricing</a></li>
-
-            <li><a href="/investors.html">Investors</a></li>
-
-            <li><a href="/contact.html">Contact</a></li>
-
-        </ul>
-
-    </div>
-
-</nav>
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="logo"><a href="/" style="text-decoration: none; color: inherit;">DOSE</a></div>
+            <ul class="nav-links">
+                <li><a href="/#home">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/#pricing">Pricing</a></li>
+                <li><a href="/investors.html">Investors</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- Add some top padding to account for fixed nav -->
     <div style="padding-top: 80px;"></div>
     
     <div class="container">
-        <!-- Rest of your existing content -->
-    <div class="container">
         <!-- Hero Section -->
         <div class="hero-section">
-            <!-- You'll need to add your actual photo here -->
             <img src="steve-photo.jpg" alt="Steev Hodgson - ADHD Coach and DOSE Founder" class="profile-image">
             
             <h1 class="hero-title">Steev Hodgson</h1>
@@ -287,68 +369,137 @@
 
         <!-- Coaching Achievements -->
         <div class="achievements">
-    <div class="achievement-card">
-        <div class="achievement-number">1,300+</div>
-        <div class="achievement-label">ADHD Coaching Sessions Completed</div>
-    </div>
-    <div class="achievement-card">
-        <div class="achievement-number">90+%</div>
-        <div class="achievement-label">Client Retention Rate</div>
-    </div>
-</div>
+            <div class="achievement-card">
+                <div class="achievement-number">1,300+</div>
+                <div class="achievement-label">ADHD Coaching Sessions Completed</div>
+            </div>
+            <div class="achievement-card">
+                <div class="achievement-number">90+%</div>
+                <div class="achievement-label">Client Retention Rate</div>
+            </div>
+        </div>
 
         <!-- Media & Speaking -->
         <div class="media-mentions">
-    <h3 class="media-title">Media Appearances & Speaking Engagements</h3>
-    <div class="media-list">
-        <div class="media-item">
-            The Playbook with David Meltzer (January 2026)<br>
-            <a href="https://youtu.be/gZVh4G7lcmk?si=zwzpD-cJo-QuSDNO" target="_blank" style="color: #06b6d4; text-decoration: none;">Click here to watch →</a>
+            <h3 class="media-title">Media Appearances & Speaking Engagements</h3>
+            <div class="media-grid">
+                <div class="media-card">
+                    <img src="playbook-thumb.jpg" alt="The Playbook Podcast" class="media-thumbnail">
+                    <div class="media-info">
+                        <h4>The Playbook</h4>
+                        <p class="media-host">with David Meltzer</p>
+                        <p class="media-date">January 2026</p>
+                        <a href="https://youtu.be/gZVh4G7lcmk?si=zwzpD-cJo-QuSDNO" target="_blank" class="media-link">Click here to watch →</a>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <img src="rush-hour.jpg" alt="Rush Hour Podcast December" class="media-thumbnail">
+                    <div class="media-info">
+                        <h4>The Rush Hour Podcast</h4>
+                        <p class="media-host">with Dave Neal</p>
+                        <p class="media-date">December 2025</p>
+                        <a href="https://youtu.be/Ls_DSM6mYCg?si=P_SaAcDri7lDr__g" target="_blank" class="media-link">Click here to watch →</a>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <img src="coachingegde.jpg" alt="Coaching Edge Podcast" class="media-thumbnail">
+                    <div class="media-info">
+                        <h4>The Coaching Edge Podcast</h4>
+                        <p class="media-date">October 2025</p>
+                        <a href="https://youtu.be/FyhVN08yP-0?si=_YWNz6yzf1m3QesQ" target="_blank" class="media-link">Click here to watch →</a>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <img src="attentiondifferent.jpg" alt="Attention Different Podcast" class="media-thumbnail">
+                    <div class="media-info">
+                        <h4>Attention Different</h4>
+                        <p class="media-host">with Stephen Tonti</p>
+                        <p class="media-date">June 2025</p>
+                        <a href="https://youtu.be/-EUiJUm-SuA?si=YP1wzwYQj3cOQOi_" target="_blank" class="media-link">Click here to watch →</a>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <img src="betterpill-thumb.jpg" alt="A Better Pill to Swallow" class="media-thumbnail">
+                    <div class="media-info">
+                        <h4>A Better Pill to Swallow</h4>
+                        <p class="media-host">with David Niemann</p>
+                        <p class="media-date">March 2025</p>
+                        <a href="https://open.spotify.com/episode/6hIKMeSFJlt3I2mzA6frZf?si=349a614579c34322" target="_blank" class="media-link">Click here to listen →</a>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <img src="rush-hour.jpg" alt="Rush Hour Podcast January" class="media-thumbnail">
+                    <div class="media-info">
+                        <h4>The Rush Hour Podcast</h4>
+                        <p class="media-host">with Dave Neal</p>
+                        <p class="media-date">January 2025</p>
+                        <a href="https://youtu.be/O4Sy7JCYkXw?si=e7my1YE-4b5gDyoq" target="_blank" class="media-link">Click here to watch →</a>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <img src="ihaveadhdthumb.jpg" alt="I Have ADHD Podcast December" class="media-thumbnail">
+                    <div class="media-info">
+                        <h4>I Have ADHD Podcast</h4>
+                        <p class="media-host">with Kristen Carder</p>
+                        <p class="media-date">December 2024</p>
+                        <a href="https://www.youtube.com/watch?v=c92Exozd0gY&t=1s" target="_blank" class="media-link">Click here to watch →</a>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <img src="ihaveadhdthumb.jpg" alt="I Have ADHD Podcast August" class="media-thumbnail">
+                    <div class="media-info">
+                        <h4>I Have ADHD Podcast</h4>
+                        <p class="media-host">with Kristen Carder</p>
+                        <p class="media-date">August 2023</p>
+                        <a href="https://ihaveadhd.com/chatting-with-kristens-focused-adhd-certified-coaches/" target="_blank" class="media-link">Click here to listen →</a>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <img src="uc-berkeley.jpg" alt="UC Berkeley NOW Conference" class="media-thumbnail">
+                    <div class="media-info">
+                        <h4>UC Berkeley NOW Conference Coach</h4>
+                        <p class="media-date">2024 & 2025</p>
+                        <a href="https://hr.berkeley.edu/people/steev-hodgson" target="_blank" class="media-link">View profile →</a>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <img src="adhd-conf.jpg" alt="International ADHD Conference" class="media-thumbnail">
+                    <div class="media-info">
+                        <h4>2024 International ADHD Conference</h4>
+                        <p class="media-date">Exhibitor</p>
+                        <a href="https://digitaleditions.sheridan.com/publication/?i=834853&p=64&view=issueViewer" target="_blank" class="media-link">View profile →</a>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <img src="gofundyourself.jpg" alt="GoFundYourself on Cheddar" class="media-thumbnail">
+                    <div class="media-info">
+                        <h4>GoFundYourself</h4>
+                        <p class="media-date">January 2026</p>
+                        <a href="https://youtu.be/gZVh4G7lcmk?si=zwzpD-cJo-QuSDNO" target="_blank" class="media-link">Coming Soon 1/29/2026 →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-cta">
+                <p style="color: #e5e5e5; margin-bottom: 15px;">Check out our BLOG for a competitive insight on DOSE vs. other ADHD apps!</p>
+                <a href="https://www.getdose.app/blog.html" target="_blank">View Blog →</a>
+            </div>
         </div>
-        <div class="media-item">
-            Attention Different Podcast (June 2025)<br>
-            <a href="https://youtu.be/-EUiJUm-SuA?si=YP1wzwYQj3cOQOi_" target="_blank" style="color: #06b6d4; text-decoration: none;">Click here to watch →</a>
+
+        <!-- Embedded Video -->
+        <div class="video-embed">
+            <iframe src="https://thecoachingedgepodcast.com/embed/interview/3363?type=video" allowfullscreen></iframe>
         </div>
-        <div class="media-item">
-            GoFundYourself (January 2026)<br>
-            <a href="https://youtu.be/gZVh4G7lcmk?si=zwzpD-cJo-QuSDNO" target="_blank" style="color: #06b6d4; text-decoration: none;">Coming Soon 1/29/2026 →</a>
-        </div>
-        <div class="media-item">
-            I Have ADHD Podcast (December 2024)<br>
-            <a href="https://www.youtube.com/watch?v=c92Exozd0gY&t=1s" target="_blank" style="color: #06b6d4; text-decoration: none;">Click here to watch →</a>
-        </div>
-        <div class="media-item">
-            Rush Hour Podcast with Dave Neal(January 2025) <br>
-            <a href="https://youtu.be/O4Sy7JCYkXw?si=e7my1YE-4b5gDyoq" target="_blank" style="color: #06b6d4; text-decoration: none;">Click here to watch →</a>
-        </div>
-        <div class="media-item">
-            I Have ADHD Podcast (August 2023)<br>
-            <a href="https://ihaveadhd.com/chatting-with-kristens-focused-adhd-certified-coaches/" target="_blank" style="color: #06b6d4; text-decoration: none;">Click here to listen →</a>
-        </div>
-        <div class="media-item">
-            A Better Pill to Swallow with David Niemann (March 2025) <br>
-            <a href="https://open.spotify.com/episode/6hIKMeSFJlt3I2mzA6frZf?si=349a614579c34322" target="_blank" style="color: #06b6d4; text-decoration: none;">Click here to listen →</a>
-        </div>
-         <div class="media-item">
-            The Coaching Edge Podcast (October 2025) <br>
-        <a href="https://youtu.be/FyhVN08yP-0?si=_YWNz6yzf1m3QesQ" target="_blank" style="color: #06b6d4; text-decoration: none;">Click here to Listen→</a>
-        </div>
-        <div class="media-item">
-            UC Berkeley NOW Conference Coach (2024 & 2025)<br>
-            <a href="https://hr.berkeley.edu/people/steev-hodgson" target="_blank" style="color: #06b6d4; text-decoration: none;">View profile →</a>
-        </div>
-        <div class="media-item">
-            2024 International ADHD Conference Exhibitor
-        <a href="https://digitaleditions.sheridan.com/publication/?i=834853&p=64&view=issueViewer" target="_blank" style="color: #06b6d4; text-decoration: none;">View profile →</a>
-        </div>
-   Check out our BLOG for a competitive insight on DOSE vs. other ADHD apps!  
-        <a href="https://www.getdose.app/blog.html" target="_blank" style="color: #06b6d4; text-decoration: none;">View Blog →</a>
-        </div>
-    </div>
-</div>
-<div style="width:100%;aspect-ratio:16/9;">
-<iframe src="https://thecoachingedgepodcast.com/embed/interview/3363?type=video" style="width:100%;height:100%;border:none;" allowfullscreen></iframe>
-</div>
 
         <!-- Creating DOSE -->
         <div class="story-section">
@@ -362,14 +513,15 @@
             </div>
         </div>
 
-<!-- CTA Section -->
-<div class="cta-section">
-    <img src="coaching-logo.png" alt="DamnHealthyDose Coaching Logo" style="width: 150px; height: auto; margin-bottom: 1.5rem;">
-    <div>
-        <a href="/" class="cta-button">Try DOSE</a>
-        <a href="https://www.damnhealthydose.com" target="_blank" class="cta-button">ADHD Coaching</a>
-        <a href="https://www.canva.com/design/DAGtXN6tgDg/0a7W52NBxbs8CHaeA58owg/view" target="_blank" class="cta-button">View Pitch Deck</a>
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <img src="coaching-logo.png" alt="DamnHealthyDose Coaching Logo">
+            <div>
+                <a href="/" class="cta-button">Try DOSE</a>
+                <a href="https://www.damnhealthydose.com" target="_blank" class="cta-button">ADHD Coaching</a>
+                <a href="https://www.canva.com/design/DAGtXN6tgDg/0a7W52NBxbs8CHaeA58owg/view" target="_blank" class="cta-button">View Pitch Deck</a>
+            </div>
+        </div>
     </div>
-</div>
 </body>
 </html>
